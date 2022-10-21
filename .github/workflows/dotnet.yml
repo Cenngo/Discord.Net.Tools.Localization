@@ -11,6 +11,10 @@ on:
 
 jobs:
   publish:
+    env:
+      RESX_PROJ: 'Discord.Net.Tools.Localization.Resx'
+      JSON_PROJ: 'Discord.Net.Tools.Localization.Json'
+  
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -21,10 +25,14 @@ jobs:
           nuget-api-key: ${{ secrets.NUGET_API_KEY }}
           
       - name: Restore Dependencies
-        run: nuget restore
+        run: |
+          nuget restore $RESX_PROJ
+          nuget restore $JSON_PROJ
       
       - name: Pack
-        run: nuget pack 
+        run: |
+          nuget pack $RESX_PROJ -OutputDirectory nuget
+          nuget pack $JSON_PROJ -OutputDirectory nuget
         
       - name: Publish
-        run: nuget push *.nupkg --source https://api.nuget.org/v3/index.json --skip-duplicate
+        run: nuget push nuget/*.nupkg --source https://api.nuget.org/v3/index.json --skip-duplicate

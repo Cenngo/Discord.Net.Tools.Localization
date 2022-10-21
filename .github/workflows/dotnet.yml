@@ -20,9 +20,6 @@ jobs:
       
       - name: Setup Nuget
         uses: NuGet/setup-nuget@v1.1.1
-        with:
-          nuget-version: latest
-          nuget-api-key: ${{ secrets.NUGET_API_KEY }}
           
       - name: Restore Dependencies
         run: dotnet restore
@@ -31,4 +28,4 @@ jobs:
         run: dotnet pack -o nuget
         
       - name: Publish
-        run: nuget push nuget/*.nupkg -Source https://api.nuget.org/v3/index.json -SkipDuplicate
+        run: nuget push nuget/*.nupkg -Source https://api.nuget.org/v3/index.json -SkipDuplicate -ApiKey ${{ secrets.NUGET_API_KEY }}

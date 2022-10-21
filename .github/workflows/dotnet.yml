@@ -12,8 +12,8 @@ on:
 jobs:
   publish:
     env:
-      RESX_PROJ: 'Discord.Net.Tools.Localization.Resx'
-      JSON_PROJ: 'Discord.Net.Tools.Localization.Json'
+      RESX_PROJ: 'Discord.Net.Tools.Localization.Resx/Discord.Net.Tools.Localization.Resx.csproj'
+      JSON_PROJ: 'Discord.Net.Tools.Localization.Json/Discord.Net.Tools.Localization.Json.csproj'
   
     runs-on: ubuntu-latest
     steps:

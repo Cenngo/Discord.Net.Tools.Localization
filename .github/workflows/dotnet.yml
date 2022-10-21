@@ -28,4 +28,4 @@ jobs:
         run: dotnet pack -o nuget
         
       - name: Publish
-        run: nuget push nuget/*.nupkg -Source https://api.nuget.org/v3/index.json -SkipDuplicate -ApiKey ${{ secrets.NUGET_API_KEY }}
+        run: nuget push nuget/**/*.nupkg -Source https://api.nuget.org/v3/index.json -SkipDuplicate -ApiKey ${{ secrets.NUGET_API_KEY }}

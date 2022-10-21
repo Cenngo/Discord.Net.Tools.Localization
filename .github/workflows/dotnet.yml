@@ -18,6 +18,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3.0.2
+      
       - name: Setup Nuget
         uses: NuGet/setup-nuget@v1.1.1
         with:
@@ -25,14 +29,10 @@ jobs:
           nuget-api-key: ${{ secrets.NUGET_API_KEY }}
           
       - name: Restore Dependencies
-        run: |
-          nuget restore $RESX_PROJ
-          nuget restore $JSON_PROJ
+        run: dotnet restore
       
       - name: Pack
-        run: |
-          nuget pack $RESX_PROJ -OutputDirectory nuget
-          nuget pack $JSON_PROJ -OutputDirectory nuget
+        run: dotnet pack -o nuget
         
       - name: Publish
         run: nuget push nuget/*.nupkg --source https://api.nuget.org/v3/index.json --skip-duplicate

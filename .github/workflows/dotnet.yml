@@ -11,10 +11,6 @@ on:
 
 jobs:
   publish:
-    env:
-      RESX_PROJ: 'Discord.Net.Tools.Localization.Resx/Discord.Net.Tools.Localization.Resx.csproj'
-      JSON_PROJ: 'Discord.Net.Tools.Localization.Json/Discord.Net.Tools.Localization.Json.csproj'
-  
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -35,4 +31,4 @@ jobs:
         run: dotnet pack -o nuget
         
       - name: Publish
-        run: nuget push nuget/*.nupkg -Source https://api.nuget.org/v3/index.json --skip-duplicate
+        run: nuget push nuget/*.nupkg -Source https://api.nuget.org/v3/index.json -SkipDuplicate

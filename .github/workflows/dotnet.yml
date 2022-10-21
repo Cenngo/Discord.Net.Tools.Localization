@@ -17,6 +17,7 @@ jobs:
       - name: Setup Nuget
         uses: NuGet/setup-nuget@v1.1.1
         with:
+          nuget-version: latest
           nuget-api-key: ${{ secrets.NUGET_API_KEY }}
           
       - name: Restore Dependencies

@@ -35,4 +35,4 @@ jobs:
         run: dotnet pack -o nuget
         
       - name: Publish
-        run: nuget push nuget/*.nupkg --source https://api.nuget.org/v3/index.json --skip-duplicate
+        run: nuget push nuget/*.nupkg -Source https://api.nuget.org/v3/index.json --skip-duplicate

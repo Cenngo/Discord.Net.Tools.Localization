@@ -2,9 +2,14 @@
 Discord Slash Commands support name/description localization. Localization is available for names and descriptions of Slash Command Groups [(GroupAttribute)](https://discordnet.dev/api/Discord.Interactions.GroupAttribute.html), Slash Commands [(SlashCommandAttribute)](https://discordnet.dev/api/Discord.Interactions.SlashCommandAttribute.html), Slash Command parameters and Slash Command Parameter Choices. 
 
 # Installation
-**Resx Templates:** `dotnet tool install --global Discord.Net.Tools.Localization.Resx --version 1.1.0`
+**Resx Templates:** `dotnet tool install --global Discord.Net.Tools.Localization.Resx`
 
-**Json Templates:** `dotnet tool install --global Discord.Net.Tools.Localization.Json --version 1.0.0`
+**Json Templates:** `dotnet tool install --global Discord.Net.Tools.Localization.Json`
+
+# Updating the Tools
+**Resx Templates:** `dotnet tool update --global Discord.Net.Tools.Localization.Resx`
+
+**Json Templates:** `dotnet tool update --global Discord.Net.Tools.Localization.Json`
 
 # Usage
 This tool can generate Resx and Json file templates which can be used for localization. By default this tool will generate a file for every command and description in your application and pre-fill values with your current values. You can then modify these files as needed or translate them to other langauges.

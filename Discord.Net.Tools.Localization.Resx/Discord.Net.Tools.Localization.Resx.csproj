@@ -11,8 +11,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="CommandLineParser" Version="2.9.1" />
-		<PackageReference Include="Discord.Net.Rest" Version="3.7.2" />
 		<PackageReference Include="ResXResourceReader.NetStandard" Version="1.1.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Discord.Net.Tools.Localization.Common\Discord.Net.Tools.Localization.Common.csproj" />
 	</ItemGroup>
 </Project>

@@ -30,7 +30,9 @@ The Discord.Net Interaction Service can be initialized with an ILocalizationMana
 | --- | --- |
 | --help | Display a list of all parameters. |
 | --version | Display currnet version information. |
-| -t | **Required.** The token of the application you want to generate the template for. |
+| -t | **Required.** The token of the application you want to generate the template for. Mutually exclusive with `-T` |
+| -T | **Required.** The path pointing to a .txt file containing the bot token. Mutually exclusive with `-t` |
 | -g | Guild to fetch the commands from. Fetches global commnands if no guild is specified. |
 | -o | The output directory to use. Defaults to current directory if not specified. |
 | -f | Name of the output file. Defaults to localizations is not specified. |
+| -s | Exclude empty key/value pair entries from the final localization file. |

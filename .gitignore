@@ -362,3 +362,4 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /Discord.Net.Tools.Localization.Resx/Properties/launchSettings.json
+/Discord.Net.Tools.Localization.Json/Properties/launchSettings.json

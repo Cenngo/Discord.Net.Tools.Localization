@@ -6,11 +6,12 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<PackAsTool>true</PackAsTool>
-		<Version>1.0.0</Version>
+		<Version>1.1.0</Version>
 		<ToolCommandName>json-template</ToolCommandName>
 	</PropertyGroup>
 
 	<ItemGroup>
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
 		<PackageReference Include="ResXResourceReader.NetStandard" Version="1.1.0" />
 	</ItemGroup>
 

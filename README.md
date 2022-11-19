@@ -2,9 +2,14 @@
 Discord Slash Commands support name/description localization. Localization is available for names and descriptions of Slash Command Groups [(GroupAttribute)](https://discordnet.dev/api/Discord.Interactions.GroupAttribute.html), Slash Commands [(SlashCommandAttribute)](https://discordnet.dev/api/Discord.Interactions.SlashCommandAttribute.html), Slash Command parameters and Slash Command Parameter Choices. 
 
 # Installation
-**Resx Templates:** `dotnet tool install --global Discord.Net.Tools.Localization.Resx --version 1.1.0`
+**Resx Templates:** `dotnet tool install --global Discord.Net.Tools.Localization.Resx`
 
-**Json Templates:** `dotnet tool install --global Discord.Net.Tools.Localization.Json --version 1.0.0`
+**Json Templates:** `dotnet tool install --global Discord.Net.Tools.Localization.Json`
+
+# Updating the Tools
+**Resx Templates:** `dotnet tool update --global Discord.Net.Tools.Localization.Resx`
+
+**Json Templates:** `dotnet tool update --global Discord.Net.Tools.Localization.Json`
 
 # Usage
 This tool can generate Resx and Json file templates which can be used for localization. By default this tool will generate a file for every command and description in your application and pre-fill values with your current values. You can then modify these files as needed or translate them to other langauges.
@@ -25,7 +30,9 @@ The Discord.Net Interaction Service can be initialized with an ILocalizationMana
 | --- | --- |
 | --help | Display a list of all parameters. |
 | --version | Display currnet version information. |
-| -t | **Required.** The token of the application you want to generate the template for. |
+| -t | **Required.** The token of the application you want to generate the template for. Mutually exclusive with `-T` |
+| -T | **Required.** The path pointing to a .txt file containing the bot token. Mutually exclusive with `-t` |
 | -g | Guild to fetch the commands from. Fetches global commnands if no guild is specified. |
 | -o | The output directory to use. Defaults to current directory if not specified. |
 | -f | Name of the output file. Defaults to localizations is not specified. |
+| -s | Exclude empty key/value pair entries from the final localization file. |

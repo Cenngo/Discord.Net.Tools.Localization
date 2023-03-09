@@ -49,7 +49,7 @@ void WriteRestCommandOption(RestApplicationCommandOption option, ResXResourceWri
     if(!(string.IsNullOrEmpty(option.Description) && o.SkipNullOrEmpty))
         rw.AddResource(CreateDescriptionKey(option.Name, path), option.Description);
 
-    var optionPath = PathCombine(path, option.Name);
+    var optionPath = PathCombine(option.Name, path);
 
     if (option.Options.Count != 0)
         foreach (var subOption in option.Options)
